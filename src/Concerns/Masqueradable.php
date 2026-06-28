@@ -19,6 +19,14 @@ trait Masqueradable
 
     public function masqueradeAs(Authenticatable $user, ?string $guardName = null, ?bool $remember = null): bool
     {
+        if (! $this->canMasquerade($user)) {
+            return false;
+        }
+
+        if (! method_exists($user, 'canBeMasqueraded') || ! $user->canBeMasqueraded($this)) {
+            return false;
+        }
+
         return app(MasqueradeManager::class)->take($this, $user, $guardName, $remember);
     }
 

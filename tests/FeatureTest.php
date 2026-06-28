@@ -102,4 +102,14 @@ final class FeatureTest extends TestCase
             ->post(route('masquerade.take', $this->user('admin@example.test')->getAuthIdentifier()))
             ->assertForbidden();
     }
+
+    public function test_model_api_enforces_both_authorization_hooks(): void
+    {
+        auth()->login($admin = $this->user('admin@example.test'));
+
+        self::assertTrue($admin->masqueradeAs($this->user('user@example.test')));
+        app(MasqueradeManager::class)->leave();
+        self::assertFalse($admin->masqueradeAs($this->user('blocked@example.test')));
+        self::assertSame('admin@example.test', auth()->user()->email);
+    }
 }

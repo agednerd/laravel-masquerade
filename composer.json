@@ -5,6 +5,10 @@
   "license": "MIT",
   "authors": [{"name": "agednerd"}],
   "homepage": "https://github.com/agednerd/laravel-masquerade",
+  "support": {
+    "issues": "https://github.com/agednerd/laravel-masquerade/issues",
+    "source": "https://github.com/agednerd/laravel-masquerade"
+  },
   "keywords": ["laravel", "masquerade", "authentication", "user-switching", "security"],
   "require": {
     "php": "^8.3",
