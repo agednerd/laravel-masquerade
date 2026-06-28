@@ -1,6 +1,6 @@
 # Laravel Masquerade changelog
 
-## 1.0.0 - Unreleased
+## 1.0.0 - 2026-06-28
 
 - Renamed the package to `agednerd/laravel-masquerade` with the `AgedNerd\\Masquerade` namespace.
 - Renamed the model trait to `AgedNerd\\Masquerade\\Concerns\\Masqueradable`.
