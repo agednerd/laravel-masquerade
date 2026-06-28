@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/12.5/phpunit.xsd"
+         bootstrap="vendor/autoload.php"
+         colors="true"
+         cacheDirectory=".phpunit.cache">
+    <testsuites>
+        <testsuite name="Laravel Masquerade">
+            <file>tests/FeatureTest.php</file>
+        </testsuite>
+    </testsuites>
+    <source>
+        <include><directory suffix=".php">src</directory></include>
+    </source>
+    <php>
+        <env name="SESSION_DRIVER" value="array"/>
+        <env name="CACHE_STORE" value="array"/>
+        <env name="APP_KEY" value="base64:Jv8LSVQJrZZ1BzJxL6uwBL9RXB4IrdG0VYF5q04hLVU="/>
+    </php>
+</phpunit>

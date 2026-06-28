@@ -1,0 +1,38 @@
+{
+  "name": "agednerd/laravel-masquerade",
+  "description": "Securely assume another user's identity in modern Laravel applications.",
+  "type": "library",
+  "license": "MIT",
+  "authors": [{"name": "agednerd"}],
+  "homepage": "https://github.com/agednerd/laravel-masquerade",
+  "keywords": ["laravel", "masquerade", "authentication", "user-switching", "security"],
+  "require": {
+    "php": "^8.3",
+    "illuminate/auth": "^13.0",
+    "illuminate/contracts": "^13.0",
+    "illuminate/http": "^13.0",
+    "illuminate/routing": "^13.0",
+    "illuminate/session": "^13.0",
+    "illuminate/support": "^13.0",
+    "illuminate/view": "^13.0"
+  },
+  "require-dev": {
+    "laravel/framework": "^13.0",
+    "mockery/mockery": "^1.6",
+    "orchestra/testbench": "^11.0",
+    "phpunit/phpunit": "^12.0"
+  },
+  "autoload": {
+    "psr-4": {"AgedNerd\\Masquerade\\": "src/"},
+    "files": ["src/helpers.php"]
+  },
+  "autoload-dev": {
+    "psr-4": {"AgedNerd\\Masquerade\\Tests\\": "tests/"}
+  },
+  "extra": {
+    "laravel": {"providers": ["AgedNerd\\Masquerade\\MasqueradeServiceProvider"], "aliases": {"Masquerade": "AgedNerd\\Masquerade\\Masquerade"}}
+  },
+  "config": {"sort-packages": true},
+  "minimum-stability": "stable",
+  "prefer-stable": true
+}
