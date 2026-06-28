@@ -325,9 +325,10 @@ The CI matrix tests PHP 8.3, 8.4, and 8.5 against the lowest and current stable 
    git push origin v1.0.0
    ```
 
-4. Submit `https://github.com/agednerd/laravel-masquerade` at [Packagist](https://packagist.org/packages/submit).
-5. Connect Packagist to GitHub or configure its webhook so pushes and new tags are synchronized automatically.
-6. Verify the release:
+4. The `Release` GitHub Actions workflow validates the full PHP/dependency matrix, confirms that the changelog contains a dated heading matching the tag, and creates the GitHub Release with generated notes. A `v1.0.0` tag therefore requires a heading such as `## 1.0.0 - 2026-06-28`.
+5. Submit `https://github.com/agednerd/laravel-masquerade` at [Packagist](https://packagist.org/packages/submit).
+6. Connect Packagist to GitHub or configure its webhook so pushes and new tags are synchronized automatically.
+7. Verify the release:
 
    ```bash
    composer show agednerd/laravel-masquerade --all
